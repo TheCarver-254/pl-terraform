@@ -1,0 +1,19 @@
+terraform init
+terraform plan -out m3.tfplan
+terraform apply
+terraform apply m4.tfplan
+terraform output
+terraform destroy
+
+
+
+terraform fmt - check #just checking
+terraform fmt
+terraform validate 
+
+#storing sensitive data
+#run the below in terminal
+export TF_VAR_aws_access_key = YOUR_ACCESS_KEY
+export TF_VAR_aws_secret_key = YOUR_SECRET_KEY
+
+
