@@ -17,3 +17,15 @@ export TF_VAR_aws_access_key = YOUR_ACCESS_KEY
 export TF_VAR_aws_secret_key = YOUR_SECRET_KEY
 
 
+#State Commands
+#list all State resources
+terraform state list
+
+#show a specific resource
+terraform state show    ADDRESS
+
+#move an item in state
+terraform state mv SOURCE DESTINATION
+
+#Remove an Item in state
+terraform state rm ADDRESS

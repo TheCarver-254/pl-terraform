@@ -1,2 +1,2 @@
 billing_code = "ACCT37896"
-project = "globo-web-app"
+project      = "globo-web-app"
