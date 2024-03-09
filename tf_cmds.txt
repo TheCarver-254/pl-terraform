@@ -1,5 +1,7 @@
 terraform init
+terraform init - upgrade
 terraform plan -out m3.tfplan
+terraform plan -replace aws_instance.nginx1 -replace aws_instance.nginx2 -out m3.tfplan
 terraform apply
 terraform apply m4.tfplan
 terraform output

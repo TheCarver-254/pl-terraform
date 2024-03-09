@@ -1,6 +1,7 @@
 variable "aws_access_key" {
   type        = string
   description = "AWS Access Key"
+  #default     = "//"
   #sensitive   = true
 }
 
@@ -8,6 +9,7 @@ variable "aws_access_key" {
 variable "aws_secret_key" {
   type        = string
   description = "AWS Secret Key"
+  #default     = "//"
   #sensitive   = true
 }
 

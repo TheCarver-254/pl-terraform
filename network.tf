@@ -1,13 +1,3 @@
-###################################################################################################
-#PROVIDERS
-###################################################################################################
-
-provider "aws" {
-  access_key = var.aws_access_key
-  secret_key = var.aws_secret_key
-  region     = "us-east-1"
-}
-
 
 ###################################################################################################
 #DATA
@@ -92,7 +82,7 @@ resource "aws_security_group" "nginx_sg" {
     to_port     = 80
     protocol    = "tcp"
     cidr_blocks = [var.vpc_cidr_block] #allow traffic from addresses only inside the vpc
-    
+
   }
 
   # Outbound Internet access
@@ -101,7 +91,7 @@ resource "aws_security_group" "nginx_sg" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
- 
+
   }
 
   tags = local.common_tags

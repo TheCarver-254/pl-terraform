@@ -3,3 +3,4 @@
 *.tfstate
 *.backup
 *.tfplan
+aws_creds
