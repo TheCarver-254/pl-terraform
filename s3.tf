@@ -50,19 +50,20 @@ resource "aws_s3_bucket_policy" "web_bucket" {
 
 #aws_s3_object
 
-resource "aws_s3_object" "website" {
+resource "aws_s3_object" "website_content" {
+  for_each = local.website_content
   bucket = aws_s3_bucket.web_bucket.bucket
-  key    = "/website/index.html"
-  source = "./globo_web_app/website/index.html"
+  key    = each.value
+  source = "${path.root}/${each.value}"
 
   tags = local.common_tags
 }
 
-resource "aws_s3_object" "graphic" {
-  bucket = aws_s3_bucket.web_bucket.bucket
-  key    = "/website/Globo_logo_Vert.png"
-  source = "./globo_web_app/website/Globo_logo_Vert.png"
+# resource "aws_s3_object" "graphic" {
+#   bucket = aws_s3_bucket.web_bucket.bucket
+#   key    = "/website/Globo_logo_Vert.png"
+#   source = "./globo_web_app/website/Globo_logo_Vert.png"
 
-  tags = local.common_tags
+#   tags = local.common_tags
 
-}
+# }

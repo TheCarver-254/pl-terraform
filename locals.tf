@@ -7,6 +7,12 @@ locals {
 
   s3_bucket_name = "globo-web-app-${random_integer.s3.result}"
 
+
+  website_content = {
+    website = "globo_web_app/website/index.html"
+    logo    = "globo_web_app/website/Globo_logo_Vert.png"
+  }
+
 }
 
 
